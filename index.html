@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘宇祥的个人网站</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .photo-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .photo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            transition: transform 0.2s ease;
+        }
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        .contact-icon {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+        .contact-item p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 20px;
+        }
+
+        .project {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .project h3, .project p {
+            padding: 0 20px;
+        }
+
+        .project-links {
+            padding: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #0056b3;
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+
+        .ai-message {
+            background: #e9ecef;
+            color: #212529;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .chat-button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .chat-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-content">
+                <h1>刘宇祥的个人网站</h1>
+                <ul>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#skills">技能</a></li>
+                    <li><a href="#projects">项目</a></li>
+                    <li><a href="#contact">联系我</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="profile-container">
+                <div class="profile-content">
+                    <h2>关于我</h2>
+                    <p>你好！我是刘宇祥，一名职业学校教师。</p>
+                    <p>作为一名教育工作者，我热爱我的工作，致力于培养学生的专业技能和综合素养。在课余时间，我喜欢通过绘画来表达创意和感受，也享受独处时光品茶下棋的惬意。</p>
+                    <p>我是一个热爱生活、乐于分享的人。通过这个个人网站，希望能与更多志同道合的朋友交流。</p>
+                    <div class="hobbies">
+                        <h3>个人爱好：</h3>
+                        <ul>
+                            <li>🎨 绘画创作</li>
+                            <li>♟️ 下棋</li>
+                            <li>🍷 品酒</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>技能专长</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                    <h3>HTML5/CSS3</h3>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <h3>React</h3>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <h3>Node.js</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-chat" class="section">
+            <h2>AI 助手</h2>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- 消息会在这里动态显示 -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="输入您的问题...">
+                    <button onclick="sendMessage()" class="chat-button">发送</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>作品展示</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <img src="images/painting1.jpg" alt="艺术作品1">
+                    <h3>色彩研究</h3>
+                    <p>这幅作品探索了色彩的情感表达，通过不同色调的融合来传达内心的感受。画面充满活力与动感，展现了生命的律动。</p>
+                    <div class="project-links">
+                        <a href="https://m.weibo.cn/u/3318402233" class="button">查看更多</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/painting2.jpg" alt="艺术作品2">
+                    <h3>抽象表现</h3>
+                    <p>这是一幅抽象表现作品，通过自由的笔触和丰富的层次，展现了对艺术形式的探索和思考。</p>
+                    <div class="project-links">
+                        <a href="https://m.weibo.cn/u/3318402233" class="button">查看更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>联我</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="images/email.png" alt="Email" class="contact-icon">
+                    <p>Email: liuyuxiang@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <img src="images/github.png" alt="GitHub" class="contact-icon">
+                    <p>GitHub: github.com/liuyuxiang</p>
+                </div>
+                <div class="contact-item">
+                    <img src="images/wechat.png" alt="WeChat" class="contact-icon">
+                    <p>WeChat: lyx_dev</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 刘宇祥的个人网站 | All rights reserved.</p>
+    </footer>
+
+    <div class="photo-container">
+        <img src="images/photo1.jpg" alt="照片1" class="photo">
+        <img src="images/photo2.jpg" alt="照片2" class="photo">
+        <img src="images/photo3.jpg" alt="照片3" class="photo">
+    </div>
+
+    <script>
+        const API_KEY = "0c399d0368d6a66c8ea48452f5fa9aa2.GbnBPJKfojvJ7dKP";
+        const API_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
+
+        function addMessage(content, isUser) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+            messageDiv.textContent = content;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const message = userInput.value.trim();
+            
+            if (!message) return;
+
+            // 显示用户消息
+            addMessage(message, true);
+            userInput.value = '';
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': API_KEY
+                    },
+                    body: JSON.stringify({
+                        model: "glm-4",  // 使用 GLM-4 模型
+                        messages: [
+                            {
+                                role: "user",
+                                content: message
+                            }
+                        ],
+                        stream: false
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('API 请求失败');
+                }
+
+                const data = await response.json();
+                if (data.choices && data.choices[0] && data.choices[0].message) {
+                    addMessage(data.choices[0].message.content, false);
+                } else {
+                    throw new Error('无效的响应格式');
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                addMessage('抱歉，发生了错误，请稍后再试。', false);
+            }
+        }
+
+        // 支持按回车发送消息
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html> 
